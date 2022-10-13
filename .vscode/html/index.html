@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/.vscode/css/main.css" />
+    <title>Netflix Webapp</title>
+    <script src="/.vscode/javacsript/app.js"></script>
+  </head>
+  <body>
+    <!--
+    navigation bar
+-->
+
+    <div class="nav">
+      <div class="nav__left">
+        <img class="nav_logo" src="/.vscode/images/logo.svg" alt="brand logo" />
+      </div>
+
+      <div class="nav__right">
+        <img
+          src="/.vscode/images/avatar.png"
+          class="nav_avatar"
+          alt="profile avatar"
+        />
+      </div>
+    </div>
+    <!--
+    banner
+-->
+    <header id="banner">
+      <div id="banner__contents">
+        <h1 id="banner__title"></h1>
+        <div id="banner__buttons">
+          <button id="banner__button">Play</button>
+          <button id="banner__button">My WatchList</button>
+        </div>
+        <p id="banner__description"></p>
+      </div>
+      <div id="banner__fadeBottom"></div>
+    </header>
+    <!--
+    row
+-->
+    <div id="headrow">
+      <div class="row">
+        <h2 class="row__title"></h2>
+        <div class="row__posters"></div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var nav = document.querySelector(".nav");
+        nav.classList.toggle("active", window.scrollY > 0);
+      });
+    </script>
+  </body>
+</html>
