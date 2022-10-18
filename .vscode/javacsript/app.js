@@ -13,6 +13,34 @@ const final_url = base_url + "/discover/movie?sort_by=popularity.desc&" + api;
 
 let img_url="https://image.tmdb.org/t/p/original";
 
+
+
+const express = require('express');
+const request = require('request');
+
+const app = express();
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/jokes/random', (req, res) => {
+  request(
+    { url: 'https://www.themoviedb.org//discover/tv?0b382d33007211b463e19200087dba58&with_networks=213' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  )
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
 // fetch movie data 
 const requests = {
     fetchPopular: `${base_url}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&${api}`,

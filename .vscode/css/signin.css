@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url();
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  font-family: "Netflix Sans", sans-serif;
+  background-color: rgb(73, 73, 73);
+  color: white;
+}
+
+header {
+  background: rgb(209, 29, 23);
+  color: rgb(161, 161, 161);
+}
+
+.logginn {
+  padding-top: 3rem;
+  font-size: large;
+  padding-left: 3rem;
+}
+
+.form-group {
+  padding-left: 50px;
+  padding: 20px;
+  margin: 20px;
+}
